@@ -4,3 +4,10 @@ mainChecker return int
 2 -- check
 3 -- mate
 4 -- pat
+
+Colors:
+1 -- White
+2 -- Black
+3 -- Empty
+
+First digit of number in cell is color
