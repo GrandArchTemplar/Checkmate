@@ -62,7 +62,7 @@ public class Main extends JFrame {
     }
 
     public void showBoard(int[][] board) {
-        // this.container.removeAll();
+        this.container.removeAll();
         lastBoard = board;
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
@@ -73,6 +73,10 @@ public class Main extends JFrame {
             }
         }
     }
+    
+    public String getString(String note) { 
+        return (String) JOptionPane.showInputDialog(note); 
+    }   
 
     public int[] getClick() throws InterruptedException {
         isListening = true;
