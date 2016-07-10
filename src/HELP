@@ -1,0 +1,6 @@
+mainChecker return int
+0 -- not allowed
+1 -- allowed
+2 -- check
+3 -- mate
+4 -- pat
