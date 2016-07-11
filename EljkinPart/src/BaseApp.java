@@ -13,23 +13,28 @@ abstract class BaseApp extends JFrame implements AppInterface {
 
     public abstract void notification(String note);
 
-    public int[][] getMove() throws InterruptedException {
-        int[] move1 = null;
-        while (move1 == null) {
-            move1 = this.getClick();
-            this.setVisible(true);
-            Thread.sleep(80);
+    public int[][] getMove() {
+        int[] move1 = null, move2 = null;
+        try {
+            while (move1 == null) {
+                move1 = this.getClick();
+                this.setVisible(true);
+                Thread.sleep(80);
+            }
+            this.stopGettingClick();
+            while (move2 == null) {
+                move2 = this.getClick();
+                this.setVisible(true);
+                Thread.sleep(80);
+            }
+            this.stopGettingClick();
+        } catch (InterruptedException e) {
+            notification("KAKOGO CHYORTA PRERIVANIYE, TVARI");
+            return null;
         }
-        this.stopGettingClick();
-        int[] move2 = null;
-        while (move2 == null) {
-            move2 = this.getClick();
-            this.setVisible(true);
-            Thread.sleep(80);
-        }
-        this.stopGettingClick();
         return new int[][]{move1, move2};
     }
+
 
     protected abstract int[] getClick();
 
