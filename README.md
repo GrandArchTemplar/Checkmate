@@ -5,3 +5,4 @@ Slaves and I developed checkmate application just for idea.
 --------------------------------------------------------------
 2. Game.java in MyPart is shit and require full or semi-full rewriting.
 --------------------------------------------------------------
+3. EljkinPart is ended and will not have updates from main developer.
