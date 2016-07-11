@@ -42,7 +42,12 @@ class App extends BaseApp {
 
 
     private void addImage(String name, int col, int row) {
-        JLabel pic = new JLabel(new ImageIcon(name + ".gif"));
+        JLabel pic;
+        if (name == null) {
+            pic = new JLabel();
+        } else {
+            pic = new JLabel(new ImageIcon(name + ".gif"));
+        }
         JFrame frame = this;
         Cursor standard = this.getCursor();
         pic.addMouseListener(new MouseListener() {
@@ -80,8 +85,8 @@ class App extends BaseApp {
         });
         pic.setOpaque(true);
         if ((col + row) % 2 == 0) {
-            pic.setBackground(black);
-        } else pic.setBackground(white);
+            pic.setBackground(white);
+        } else pic.setBackground(black);
         pic.setVerticalAlignment(JLabel.CENTER);
         pic.setHorizontalAlignment(JLabel.CENTER);
         container.add(pic);
