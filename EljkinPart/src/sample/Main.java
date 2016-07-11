@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class App extends BaseApp {
+class App extends BaseApp {
     private String[][] field = new String[8][8];
     private Container container = this.getContentPane();
     private Color black = new Color(140, 60, 25);
@@ -81,6 +81,7 @@ public class App extends BaseApp {
     }
 
     public void stopGettingClick() {
+        click = null;
         isListening = false;
     }
 
