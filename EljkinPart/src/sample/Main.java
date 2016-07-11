@@ -1,12 +1,11 @@
-package sample;
+
 
 import javax.swing.*;
-import javax.swing.text.html.ImageView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main extends JFrame {
+public class App extends BaseApp {
     private String[][] field = new String[8][8];
     private Container container = this.getContentPane();
     private Color black = new Color(140, 60, 25);
@@ -14,7 +13,6 @@ public class Main extends JFrame {
     private Object monitor = new Object();
     private boolean isListening = false;
     private int[] click;
-    private int[][] lastBoard;
 
     private String getName(int name) {
         String color;
@@ -63,7 +61,6 @@ public class Main extends JFrame {
 
     public void showBoard(int[][] board) {
         this.container.removeAll();
-        lastBoard = board;
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 if (board[row][col] != 10) {
@@ -73,26 +70,28 @@ public class Main extends JFrame {
             }
         }
     }
-    
-    public String getString(String note) { 
-        return (String) JOptionPane.showInputDialog(note); 
-    }   
 
-    public int[] getClick() throws InterruptedException {
+    public String getString(String note) {
+        return (String) JOptionPane.showInputDialog(note);
+    }
+
+    public int[] getClick() {
         isListening = true;
         return click;
     }
-    public void stopGettingClick(){
+
+    public void stopGettingClick() {
         isListening = false;
     }
-    public void notification(String note){
+
+    public void notification(String note) {
         JOptionPane.showMessageDialog(null, note);
     }
 
-    public Main() {
+    App() {
         super("Checkmates");
         this.setBounds(450, 10, 600, 600);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         GridLayout grid = new GridLayout(8, 8, 0, 0);
         container.setLayout(grid);
     }
