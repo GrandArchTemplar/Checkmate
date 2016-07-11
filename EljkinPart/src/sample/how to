@@ -1,9 +1,0 @@
-how to get a click
-        int[] move = null;
-        while (move == null){
-            move = app.getClick();
-            app.setVisible(true);
-            Thread.sleep(100);
-        }
-        app.stopGettingClick();
-Лучше почаще вставлять app.setVis...
