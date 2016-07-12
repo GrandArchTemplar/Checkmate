@@ -4,13 +4,13 @@ showBoard
 2 - white rook
 3 - white queen
 4 - white king
-5 - white horse
+5 - white horse (equal to knight для всяких Паш)
 6 - white bishop
 7 - black pawn
 8 - black rook
 9 - black queen
 10 - black king
-11 - black horse
+11 - black horse (equal to knight для всяких Паш)
 12 - black bishop
 
 Ввод таблицы соответствует ее выводу.
