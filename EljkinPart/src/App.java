@@ -41,7 +41,7 @@ class App extends BaseApp {
     }
 
 
-    private void addImage(String name, int col, int row) {
+    private void addImage(String name, int row, int col) {
         JLabel pic;
         if (name == null) {
             pic = new JLabel();
