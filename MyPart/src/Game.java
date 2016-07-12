@@ -246,15 +246,15 @@ public class Game implements Runnable {
                     // ...crap
                     switch (table[i][j] % 10) {
                         case 1:
-                            if (checkPawn(i, j, x2, y2, eCol)) return 0;
+                            if (checkPawn(i, j, x2, y2, eCol) == 0) return 0;
                         case 2:
-                            if (checkBishop(i, j, x2, y2, eCol)) return 0;
+                            if (checkBishop(i, j, x2, y2, eCol) == 0) return 0;
                         case 3:
-                            if (checkKnight(i, j, x2, y2, eCol)) return 0;
+                            if (checkKnight(i, j, x2, y2, eCol) == 0) return 0;
                         case 4:
-                            if (checkRook(i, j, x2, y2, eCol)) return 0;
+                            if (checkRook(i, j, x2, y2, eCol) == 0) return 0;
                         case 5:
-                            if (checkQueen(i, j, x2, y2, eCol)) return 0;
+                            if (checkQueen(i, j, x2, y2, eCol) == 0) return 0;
                         case 6:
                             // Avoid infinite recursion
                             if ((Math.abs(i - x2) <= 1) || (Math.abs(j - y2) <= 1)) return 0;
